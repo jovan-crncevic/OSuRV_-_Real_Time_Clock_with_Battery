@@ -246,7 +246,7 @@ int main(int argc, char **argv)
    
    /* Check that the program was called correctly */
    if ( argc > 2 ) {
-      printf("Too many arguments specified.\nRun as:\nrtc-pi\nor\nrtc-pi CCYYMMDDHHMMSS\n");
+      printf("Previse argumenata prosledjeno.\nPokreni ovako:\nrtc-pi\nor\nrtc-pi CCYYMMDDHHMMSS\n");
       exit (-1);
    } 
 
@@ -263,7 +263,7 @@ int main(int argc, char **argv)
       if ( (year < 2000) || (year > 2099) || (month < 1) || (month > 12) ||
             (day < 1) || (day>31) || (hour < 0) || (hour > 23) || (minute < 0) ||
             (minute > 59) || (second < 0) || (second > 59) ) {
-         printf("Incorrect date and time specified.\nRun as:\nrtc-pi\nor\nrtc-pi CCYYMMDDHHMMSS\n");
+         printf("Pogresan format unosa datuma.\nPokreni ovako:\nrtc-pi\nor\nrtc-pi CCYYMMDDHHMMSS\n");
          exit (-1);
       }
 
@@ -294,10 +294,11 @@ int main(int argc, char **argv)
       time_setformat.tv_usec = 0;
 
       lp = settimeofday(&time_setformat,NULL);
+      printf("Vreme raspija i rtc modula podeseno na: %d-%d-%d %d:%d:%d\n", time_requested.tm_year, time_requested.tm_mon, day, hour, minute, second);
 
       /* Check that the change was successful */
       if ( lp < 0 ) {  
-         printf("Unable to change the system time. Did you run the program as an administrator?\n");
+         printf("Ne mogu da podesim vreme. Da li si pokrenuo program kao administrator?\n");
          printf("The operation returned the error message \"%s\"\n", strerror( errno ) );
          exit (-1);
       }
@@ -332,15 +333,15 @@ int main(int argc, char **argv)
       time_setformat.tv_usec = 0;
 
       lp = settimeofday(&time_setformat,NULL);
-      printf("Setting time, epoch time is %d\n", epoch_time);
+      printf("Vreme raspija ucitano sa modula: %d-%d-%d %d:%d:%d\n", time_requested.tm_year, time_requested.tm_mon, day, hour, minute, second);
 
       /* Check that the change was successful */
       if ( lp < 0 ) {  
-         printf("Unable to change the system time. Did you run the program as an administrator?\n");
+         printf("Ne mogu da podesim vreme. Da li si pokrenuo program kao administrator?\n");
          printf("The operation returned the error message \"%s\"\n", strerror( errno ) );
          exit (-1);
       } else {
-	      printf("Success setting time.\n");
+	      printf("Uspesno podesio vreme.\n");
       }
    }
 
