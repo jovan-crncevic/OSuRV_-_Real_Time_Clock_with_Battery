@@ -1,8 +1,7 @@
 ds1302 modul
 mh real time clock module 2
 
----POSTAVKA---
-main (raspberry c):
+---POSTAVKA (RASP C)---
 https://github.com/ksaye/IoTDemonstrations/blob/master/rtc-pi/rtc-pi.c
 https://zedt.eu/tech/hardware/using-ds1302-real-time-clock-module-raspberry-pi/
 //https://learn.sunfounder.com/lesson-33-rtc-ds1302 (404)
@@ -10,6 +9,8 @@ https://zedt.eu/tech/hardware/using-ds1302-real-time-clock-module-raspberry-pi/
 ---SYSLOG, JOURNALCTL---
 https://www.youtube.com/watch?v=6uP_f_z3CbM&t=1474s
 https://chat.openai.com/share/c7baeb8c-6c4a-49e7-a432-4885c86f8ca1
+
+---SYSTEMD SERVICE(DAEMON)---
 
 ---SLEEP---
 https://www.geeksforgeeks.org/sleep-function-in-c/
