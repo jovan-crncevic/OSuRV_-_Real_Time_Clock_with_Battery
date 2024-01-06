@@ -1,0 +1,13 @@
+[Unit]
+Description=Testiranje daemon programa
+
+[Service]
+Type=simple
+User=root
+ExecStart=/home/stefziv/Desktop/OSURV/Test/moj_program
+Restart=always
+RestartSec=5
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

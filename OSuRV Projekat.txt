@@ -12,10 +12,8 @@ https://www.youtube.com/watch?v=6uP_f_z3CbM&t=1474s
 
 ---SYSTEMD SERVICE(DAEMON)---
 https://www.makeuseof.com/create-systemd-service-on-linux/
+https://www.i-programmer.info/programming/cc/13148-applying-c-running-programs-with-systemd.html
 https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/
-
----SLEEP---
-https://www.geeksforgeeks.org/sleep-function-in-c/
 
 ---TIME CHANGE---
 https://stackoverflow.com/questions/2251635/how-to-detect-change-of-system-time-in-linux
@@ -27,14 +25,16 @@ https://lkml.org/lkml/2010/9/16/405
 koraci:
 //nepovecava brojac (treba samo baterija)
 
-sync na svakih sat vremena
-sistemski servis koji se pokrece sa sistemom (daemon)
-
-detektovanje promene globalnog vremena na raspi i sync na rtc
-ukoliko ima interneta pri boot, raspi ima prednost nakon osvezavanja, suprotno rtc
-
 git
 
-//ntp
-//provera vremena na boot
+(proveri v3)
+
+sync na svakih sat vremena (daemon service podesavanje restartafter=3600)
+sistemski servis koji se pokrece sa sistemom (daemon, journalctl za loggove)
+
+detektovanje promene globalnog vremena na raspi i sync na rtc (ovde raspi ima prednost, kad se rucno promeni sat ucitava se sa raspi i stavlja na rtc)
+//ukoliko ima interneta pri boot, raspi ima prednost nakon osvezavanja, suprotno rtc
+
+shell skripta za instaliranje
+
 
