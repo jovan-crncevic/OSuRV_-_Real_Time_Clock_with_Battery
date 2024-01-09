@@ -254,8 +254,8 @@ void main_read_from_pi_write_to_rtc(){
    time(&epoch_time);
    time_requested = *localtime(&epoch_time);
    
-   year = time_requested.tm_year;
-   month = time_requested.tm_mday;
+   year = time_requested.tm_year+1900;
+   month = time_requested.tm_mday+1;
    day = time_requested.tm_mday;
    hour = time_requested.tm_hour;
    minute = time_requested.tm_min;
@@ -270,7 +270,7 @@ void main_read_from_pi_write_to_rtc(){
    write_rtc(MONTH_WRITE, ( (month/10) << 4) | ( month % 10) );
    write_rtc(YEAR_WRITE, ( ((year-2000)/10) << 4) | (year % 10) ); 
     
-   syslog(LOG_INFO, "Uspesno ucitano vreme sa raspija i zapisano na RTC. Vreme: %d-%d-%d %d:%d:%d\n", time_requested.tm_year+1900, time_requested.tm_mon+1, time_requested.tm_mday, time_requested.tm_hour, time_requested.tm_min, time_requested.tm_sec);
+   syslog(LOG_INFO, "Uspesno ucitano vreme sa raspija i zapisano na RTC. Vreme: %d-%d-%d %d:%d:%d\n", year, month, day, hour, minute, second);
    closelog();
 }
 
@@ -353,6 +353,11 @@ int main(int argc, char **argv)
       
    //na boot citam sa rtc
    main_write_to_pi_read_from_rtc();
+
+   //DEBUG
+   /*
+   main_read_from_pi_write_to_rtc();
+   main_write_to_pi_read_from_rtc();*/
 
    //ako dodje do promene sata onda citam sa raspi i pisem na rtc
    //sleep(3);
