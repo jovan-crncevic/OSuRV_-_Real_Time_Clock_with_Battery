@@ -341,7 +341,7 @@ void cekaj_na_promene(){
    closelog();
    close(fd);
 
-   sleep(3);
+   sleep(1);
    cekaj_na_promene();
 }
 
