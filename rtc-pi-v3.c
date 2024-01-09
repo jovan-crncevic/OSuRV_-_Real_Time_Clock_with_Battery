@@ -261,14 +261,6 @@ void main_read_from_pi_write_to_rtc(){
    minute = time_requested.tm_min;
    second = time_requested.tm_sec;
 
-   /* Validate that the input date and time is basically sensible */
-   if ( (year < 2000) || (month < 1) || (month > 12) ||
-         (day < 1) || (day>31) || (hour < 0) || (hour > 23) || (minute < 0) ||
-         (minute > 59) || (second < 0) || (second > 59) ) {
-      syslog(LOG_ERR, "Nesto nije uredu sa ucitavanjem datuma.");
-      exit (-1);
-   }
-
    /* Got valid input - now write it to the RTC */
    /* The RTC expects the values to be written in packed BCD format */
    write_rtc(SEC_WRITE, ( (second/10) << 4) | ( second % 10) );
