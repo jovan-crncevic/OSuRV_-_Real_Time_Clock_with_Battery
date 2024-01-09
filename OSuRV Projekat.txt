@@ -15,10 +15,13 @@ https://www.makeuseof.com/create-systemd-service-on-linux/
 https://www.i-programmer.info/programming/cc/13148-applying-c-running-programs-with-systemd.html
 https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/
 
----TIME CHANGE---
+---TIME CHANGE DETECTION---
 https://stackoverflow.com/questions/2251635/how-to-detect-change-of-system-time-in-linux
 https://superuser.com/questions/294984/how-to-make-an-application-detect-if-system-time-has-changed-in-linux
 https://lkml.org/lkml/2010/9/16/405
+
+---TIME CHANGE RASPI---
+https://raspberrytips.com/set-date-time-raspberry-pi/
 
 
 
