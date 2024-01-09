@@ -355,7 +355,7 @@ int main(int argc, char **argv)
    main_write_to_pi_read_from_rtc();
 
    //ako dodje do promene sata onda citam sa raspi i pisem na rtc
-   sleep(3);
+   //sleep(3);
    cekaj_na_promene();
 
    return 0;
