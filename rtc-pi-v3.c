@@ -280,7 +280,7 @@ void main_read_from_pi_write_to_rtc(){
    
    //log
    epoch_time = mktime(&time_requested); 
-   syslog(LOG_INFO, "Uspesno ucitano vreme sa raspija i zapisano na RTC. Epoch time: %ld", epoch_time);
+   syslog(LOG_INFO, "Uspesno ucitano vreme sa raspija i zapisano na RTC. Vreme: %d-%d-%d %d:%d:%d\n", time_requested.tm_year+1900, time_requested.tm_mon+1, time_requested.tm_mday, time_requested.tm_hour, time_requested.tm_min, time_requested.tm_sec);
    closelog();
 }
 
@@ -318,7 +318,7 @@ void main_write_to_pi_read_from_rtc(){
    time_setformat.tv_usec = 0;
 
    lp = settimeofday(&time_setformat,NULL);
-   syslog(LOG_INFO, "Vreme ucitano sa RTC i zapisano na raspi: %d-%d-%d %d:%d:%d\n", time_requested.tm_year, time_requested.tm_mon, day, hour, minute, second);
+   syslog(LOG_INFO, "Vreme ucitano sa RTC i zapisano na raspi: %d-%d-%d %d:%d:%d\n", time_requested.tm_year+1900, time_requested.tm_mon+1, time_requested.tm_mday, time_requested.tm_hour, time_requested.tm_min, time_requested.tm_sec);
 
    /* Check that the change was successful */
    if ( lp < 0 ) {  
