@@ -4,9 +4,9 @@ Description=Testiranje daemon programa
 [Service]
 Type=simple
 User=root
-ExecStart=/home/stefziv/Desktop/OSURV/Test/moj_program
+ExecStart=/home/stefziv/Desktop/OSURV/Test/moj_program //lokacija a.out
 Restart=always
-RestartSec=5
+RestartSec=3600
 KillMode=process
 
 [Install]
