@@ -1,9 +1,6 @@
-//bit-banging ili spi, i2c, uart
-
-terminal = gpio readall
 u kodu se menjaju gpio 0 1 2 na out mode
-gpio readall ? ovde treba da se vide promene
-v2 -> #define GPIO_ADD 0x3F200000L
+'gpio readall' u terminal (ovde treba da se vide promene)
+#define GPIO_ADD 0x3F200000L
 
 BCM:
 VCC - 2 pin (mora 5V)
