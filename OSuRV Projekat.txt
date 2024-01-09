@@ -23,18 +23,14 @@ https://lkml.org/lkml/2010/9/16/405
 
 
 koraci:
-//nepovecava brojac (treba samo baterija)
-
-git
 
 (proveri v3)
-
 sync na svakih sat vremena (daemon service podesavanje restartafter=3600)
 sistemski servis koji se pokrece sa sistemom (daemon, journalctl za loggove)
-
 detektovanje promene globalnog vremena na raspi i sync na rtc (ovde raspi ima prednost, kad se rucno promeni sat ucitava se sa raspi i stavlja na rtc)
+
 //ukoliko ima interneta pri boot, raspi ima prednost nakon osvezavanja, suprotno rtc
 
-shell skripta za instaliranje
+//shell skripta za instaliranje
 
 
