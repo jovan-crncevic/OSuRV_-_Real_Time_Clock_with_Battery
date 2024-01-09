@@ -269,9 +269,7 @@ void main_read_from_pi_write_to_rtc(){
    write_rtc(DATE_WRITE, ( (day/10) << 4) | ( day % 10) );
    write_rtc(MONTH_WRITE, ( (month/10) << 4) | ( month % 10) );
    write_rtc(YEAR_WRITE, ( ((year-2000)/10) << 4) | (year % 10) ); 
-   
-   //log
-   epoch_time = mktime(&time_requested); 
+    
    syslog(LOG_INFO, "Uspesno ucitano vreme sa raspija i zapisano na RTC. Vreme: %d-%d-%d %d:%d:%d\n", time_requested.tm_year+1900, time_requested.tm_mon+1, time_requested.tm_mday, time_requested.tm_hour, time_requested.tm_min, time_requested.tm_sec);
    closelog();
 }
