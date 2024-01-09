@@ -6,7 +6,7 @@ gpio readall ? ovde treba da se vide promene
 v2 -> #define GPIO_ADD 0x3F200000L
 
 BCM:
-VCC - 1 pin
+VCC - 2 pin (mora 5V)
 GND - 6 pin
 CLK - 13 pin GPIO27
 DAT - 12 pin GPIO18
