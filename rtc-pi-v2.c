@@ -294,7 +294,7 @@ int main(int argc, char **argv)
       time_setformat.tv_usec = 0;
 
       lp = settimeofday(&time_setformat,NULL);
-      printf("Vreme raspija i rtc modula podeseno na: %d-%d-%d %d:%d:%d\n", time_requested.tm_year, time_requested.tm_mon, day, hour, minute, second);
+      printf("Vreme raspija i rtc modula podeseno na: %d-%d-%d %d:%d:%d\n", time_requested.tm_year+1900, time_requested.tm_mon+1, time_requested.tm_mday, time_requested.tm_hour, time_requested.tm_min, time_requested.tm_sec);
 
       /* Check that the change was successful */
       if ( lp < 0 ) {  
@@ -333,7 +333,7 @@ int main(int argc, char **argv)
       time_setformat.tv_usec = 0;
 
       lp = settimeofday(&time_setformat,NULL);
-      printf("Vreme raspija ucitano sa modula: %d-%d-%d %d:%d:%d\n", time_requested.tm_year, time_requested.tm_mon, day, hour, minute, second);
+      printf("Vreme raspija ucitano sa modula: %d-%d-%d %d:%d:%d\n", time_requested.tm_year+1900, time_requested.tm_mon+1, time_requested.tm_mday, time_requested.tm_hour, time_requested.tm_min, time_requested.tm_sec);
 
       /* Check that the change was successful */
       if ( lp < 0 ) {  
