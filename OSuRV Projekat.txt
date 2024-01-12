@@ -4,14 +4,12 @@ mh real time clock module 2
 ---POSTAVKA (RASP C)---
 https://github.com/ksaye/IoTDemonstrations/blob/master/rtc-pi/rtc-pi.c
 https://zedt.eu/tech/hardware/using-ds1302-real-time-clock-module-raspberry-pi/
-//https://learn.sunfounder.com/lesson-33-rtc-ds1302 (404)
 
 ---COPY FILE---
 https://www.geeksforgeeks.org/cp-command-linux-examples/
 
 ---SYSLOG, JOURNALCTL---
 https://chat.openai.com/share/c7baeb8c-6c4a-49e7-a432-4885c86f8ca1
-https://www.youtube.com/watch?v=6uP_f_z3CbM&t=1474s
 
 ---SYSTEMD SERVICE(DAEMON)---
 https://www.makeuseof.com/create-systemd-service-on-linux/
@@ -20,23 +18,14 @@ https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/
 
 ---TIME CHANGE DETECTION---
 https://stackoverflow.com/questions/2251635/how-to-detect-change-of-system-time-in-linux
-https://superuser.com/questions/294984/how-to-make-an-application-detect-if-system-time-has-changed-in-linux
-https://lkml.org/lkml/2010/9/16/405
 
 ---TIME CHANGE RASPI---
 https://raspberrytips.com/set-date-time-raspberry-pi/
 
-
-
 koraci:
-
-(proveri v3)
+(v3 main, v2 rezerva)
 sync na svakih sat vremena (daemon service podesavanje restartafter=3600)
 sistemski servis koji se pokrece sa sistemom (sudo systemctl enable TestProgram.service, daemon, journalctl -xe | grep RTCPI)
 detektovanje promene globalnog vremena na raspi i sync na rtc (ovde raspi ima prednost, kad se rucno promeni sat ucitava se sa raspi i stavlja na rtc)
-
-//ukoliko ima interneta pri boot, raspi ima prednost nakon osvezavanja, suprotno rtc
-
-//shell skripta za instaliranje
-
+SVE GOTOVO
 
