@@ -4,7 +4,7 @@
 
 ## Instalacija
 
-1.) Kopirati fajlove iz 'kod' foldera u lokaciju sa koje će se pozivati kod prilikom pokretanja sistema/
+1.) Kopirati fajlove iz 'kod' foldera u lokaciju sa koje će se pozivati kod prilikom pokretanja sistema<br />
     > example: /home/stefziv/moj_program/
 2.) Kompajlirati kod pokretanjem komande:/
     > gcc rtc-pi-v3.c
