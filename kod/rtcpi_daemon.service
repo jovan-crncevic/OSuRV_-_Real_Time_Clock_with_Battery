@@ -1,5 +1,5 @@
 [Unit]
-Description=Testiranje daemon programa
+Description=RTC PI program
 
 [Service]
 Type=simple
