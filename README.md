@@ -5,18 +5,18 @@
 ## Instalacija
 
 1.) Kopirati fajlove iz 'kod' foldera u lokaciju sa koje će se pozivati kod prilikom pokretanja sistema<br />
-    > example: /home/stefziv/moj_program/
+    > example: /home/stefziv/moj_program/<br />
 2.) Kompajlirati kod pokretanjem komande:<br />
-    > gcc rtc-pi-v3.c
+    > gcc rtc-pi-v3.c<br />
 3.) Otvoriti rtcpi_daemon.service fajl i promeniti vrednost ExecStart na izabranu lokaciju:<br />
-    > ExecStart=/home/stefziv/moj_program/a.out
+    > ExecStart=/home/stefziv/moj_program/a.out<br />
 4.) Kopirati izmenjeni rtcpi_daemon.service na lokaciju:<br />
-    > /etc/systemd/system/
+    > /etc/systemd/system/<br />
 5.) Osvezavanje servisnih fajlova/
-    > sudo systemctl daemon-reload
+    > sudo systemctl daemon-reload<br />
 6.) Ako zelimo da se servis pokrene prilikom svakog pokretanja sistema:<br />
-    > sudo systemctl enable rtcpi_daemon.service
+    > sudo systemctl enable rtcpi_daemon.service<br />
 7.) Za pokretanje servisa<br />
-    > sudo systemctl start rtcpi_daemon.service
+    > sudo systemctl start rtcpi_daemon.service<br />
 8.) Provera stanja i pregled logova:<br />
-    > sudo systemctl status rtcpi_daemon.service 
+    > sudo systemctl status rtcpi_daemon.service<br />
