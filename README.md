@@ -1,6 +1,11 @@
 # Real Time Clock DS1302 za Raspberry Pi 2
 
-(ovde ce biti dokumentacija, okvirno sta kod radi, glavne funkcije, instalacija, testiranje, reference odnosno sajtovi koje smo koristili i slicno)
+## Svrha programa
+- RTC (Real-Time Clock) čipovi se koriste za praćenje realnog vremena u stvarnom svetu, nezavisno od rada računara.<br />
+- Opšta svrha ovog programa je upravljanje RTC čipom DS1302 povezanim sa Raspberry Pi računarom.<br />
+- Ovaj program ima dva osnovna režima rada:<br />
+Postavljanje vremena na RTC prilikom pokretanja - prilikom pokretanja programa čita se trenutno vreme i datum sa RTC čipa i postavlja se na sistemski sat Raspberry Pi- ja; ovo obezbeđuje da sistem ima tačno vreme pri svakom pokretanju<br />
+Čekanje na promene u sistemu i ažuriranje RTC- a - prate se promene u sistemu; kada dođe do promene, čita se trenutno vreme sa Raspberry Pi- ja i upisuje se na RTC čip. Ovo omogućava održavanje tačnosti RTC- a u odnosu na sistemsko vreme Raspberry Pi- ja<br />
 
 ## Instalacija
 
