@@ -8,9 +8,13 @@ Postavljanje vremena na RTC prilikom pokretanja - prilikom pokretanja programa �
 Čekanje na promene u sistemu i ažuriranje RTC- a - prate se promene u sistemu; kada dođe do promene, čita se trenutno vreme sa Raspberry Pi- ja i upisuje se na RTC čip. Ovo omogućava održavanje tačnosti RTC- a u odnosu na sistemsko vreme Raspberry Pi- ja<br />
 
 ## Opis funkcija programa
-- main() - ovo je glavna funkcija programa; postavlja GPIO pinove, sinhronizuje vreme sa RTC- om prilikom pokretanja, a zatim čeka na promene u sistemu kako bi se ažurirao RTC
-- setup_io() - funkcija postavlja pristup GPIO pinovima Raspberry Pi računara; koristi se za mapiranje fizičkih adresa GPIO registara u virtuelni adresni prostor programa; podešava pinove za komunikaciju sa RTC čipom, postavljajući ih kao izlazne ili ulazne, i postavlja njihove početne vrednosti
-- read_rtc() - funkcija čita vrednost iz određenog registra RTC čipa u svrhu čitanja informacija o trenutnom vremenu i datumu sa RTC čipa
+- main() - ovo je glavna funkcija programa; postavlja GPIO pinove, sinhronizuje vreme sa RTC- om prilikom pokretanja, a zatim čeka na promene u sistemu kako bi se ažurirao RTC<br />
+- setup_io() - funkcija postavlja pristup GPIO pinovima Raspberry Pi računara; koristi se za mapiranje fizičkih adresa GPIO registara u virtuelni adresni prostor programa; podešava pinove za komunikaciju sa RTC čipom, postavljajući ih kao izlazne ili ulazne, i postavlja njihove početne vrednosti<br />
+- read_rtc() - funkcija čita vrednost iz određenog registra RTC čipa u svrhu dobijanja informacija o trenutnom vremenu i datumu sa RTC čipa; čitanje se vrši serijskom komunikacijom<br />
+- write_rtc() - funkcija piše vrednosti u određeni registar RTC čipa; koristi se za postavljanje vremena i datuma na RTC čip; upis se vrši serijskom komunikacijom<br />
+- main_read_from_pi_write_to_rtc() - funkcija čita trenutno vreme i datum sa Raspberry Pi- ja i upisuje ga na RTC čip; koristi se pri pokretanju programa kako bi sinhronizovala RTC sa sistemskim vremenom Raspberry Pi- ja; informiše korisnika o uspešnom ažuriranju RTC- a<br />
+- main_write_to_pi_read_from_rtc() - funkcija čita vreme i datum iz RTC čipa i postavlja ih na Raspberry Pi i takođe se koristi prilikom pokretanja programa kako bi sinhronizovala sistemski sat sa RTC čipom<br />
+- cekaj_na_promene() - funkcija čeka na promene u sistemu; ako dođe do promene, poziva main_read_from_pi_write_to_rtc() za ažuriranje vremena na RTC čipu; koristi se za automatsko održavanje tačnosti RTC- a u odnosu na sistemsko vreme Raspberry Pi- ja<br />
 
 ## Instalacija
 
@@ -47,3 +51,7 @@ RST - 11 pin GPIO17<br />
 - U prvom terminalu pokrenuti istu komandu<br />
 - Povezati raspi na internet i posmatrati log posle par minuta<br />
 - ...<br />
+
+## Reference
+- Sajtovi korišćeni kao pomoć tokom izrade programa:<br />
+
