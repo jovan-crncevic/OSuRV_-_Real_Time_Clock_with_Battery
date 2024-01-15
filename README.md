@@ -7,6 +7,11 @@
 Postavljanje vremena na RTC prilikom pokretanja - prilikom pokretanja programa čita se trenutno vreme i datum sa RTC čipa i postavlja se na sistemski sat Raspberry Pi- ja; ovo obezbeđuje da sistem ima tačno vreme pri svakom pokretanju<br />
 Čekanje na promene u sistemu i ažuriranje RTC- a - prate se promene u sistemu; kada dođe do promene, čita se trenutno vreme sa Raspberry Pi- ja i upisuje se na RTC čip. Ovo omogućava održavanje tačnosti RTC- a u odnosu na sistemsko vreme Raspberry Pi- ja<br />
 
+## Opis funkcija programa
+- main() - ovo je glavna funkcija programa; postavlja GPIO pinove, sinhronizuje vreme sa RTC- om prilikom pokretanja, a zatim čeka na promene u sistemu kako bi se ažurirao RTC
+- setup_io() - funkcija postavlja pristup GPIO pinovima Raspberry Pi računara; koristi se za mapiranje fizičkih adresa GPIO registara u virtuelni adresni prostor programa; podešava pinove za komunikaciju sa RTC čipom, postavljajući ih kao izlazne ili ulazne, i postavlja njihove početne vrednosti
+- read_rtc() - funkcija čita vrednost iz određenog registra RTC čipa u svrhu čitanja informacija o trenutnom vremenu i datumu sa RTC čipa
+
 ## Instalacija
 
 - Kopirati fajlove iz 'kod' foldera u lokaciju sa koje će se pozivati kod prilikom pokretanja sistema<br />
