@@ -54,4 +54,12 @@ RST - 11 pin GPIO17<br />
 
 ## Reference
 - Sajtovi korišćeni kao pomoć tokom izrade programa:<br />
-
+https://github.com/ksaye/IoTDemonstrations/blob/master/rtc-pi/rtc-pi.c<br />
+https://zedt.eu/tech/hardware/using-ds1302-real-time-clock-module-raspberry-pi/<br />
+https://www.geeksforgeeks.org/cp-command-linux-examples/<br />
+https://chat.openai.com/share/c7baeb8c-6c4a-49e7-a432-4885c86f8ca1<br />
+https://www.makeuseof.com/create-systemd-service-on-linux/<br />
+https://www.i-programmer.info/programming/cc/13148-applying-c-running-programs-with-systemd.html<br />
+https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/<br />
+https://stackoverflow.com/questions/2251635/how-to-detect-change-of-system-time-in-linux<br />
+https://raspberrytips.com/set-date-time-raspberry-pi/<br />
