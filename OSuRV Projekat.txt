@@ -23,9 +23,9 @@ https://stackoverflow.com/questions/2251635/how-to-detect-change-of-system-time-
 https://raspberrytips.com/set-date-time-raspberry-pi/
 
 koraci:
-(v3 main, v2 rezerva)
+(v3 main)
 sync na svakih sat vremena (daemon service podesavanje restartafter=3600)
-sistemski servis koji se pokrece sa sistemom (sudo systemctl enable TestProgram.service, daemon, journalctl -xe | grep RTCPI)
+sistemski servis koji se pokrece sa sistemom (sudo systemctl enable rtcpi_daemon.service, daemon, journalctl -xe | grep RTCPI)
 detektovanje promene globalnog vremena na raspi i sync na rtc (ovde raspi ima prednost, kad se rucno promeni sat ucitava se sa raspi i stavlja na rtc)
 SVE GOTOVO
 

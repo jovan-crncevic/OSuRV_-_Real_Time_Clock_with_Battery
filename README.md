@@ -6,6 +6,7 @@
 - Ovaj program ima dva osnovna režima rada:<br />
 Postavljanje vremena na Raspberry Pi prilikom pokretanja - prilikom pokretanja programa čita se trenutno vreme i datum sa RTC čipa i postavlja se na sistemski sat Raspberry Pi- ja; ovo obezbeđuje da sistem ima tačno vreme pri svakom pokretanju<br />
 Čekanje na promene u sistemu i ažuriranje RTC- a - prate se promene u sistemu; kada dođe do promene, čita se trenutno vreme sa Raspberry Pi- ja i upisuje se na RTC čip. Ovo omogućava održavanje tačnosti RTC- a u odnosu na sistemsko vreme Raspberry Pi- ja<br />
+- DS1302 konstantno broji vreme kada je prikljucen VCC (5V) i/ili baterija (CR2032 3V)<br />
 
 ## Opis funkcija programa
 - main() - ovo je glavna funkcija programa; postavlja GPIO pinove, sinhronizuje vreme sa RTC- om prilikom pokretanja, a zatim čeka na promene u sistemu kako bi se ažurirao RTC<br />

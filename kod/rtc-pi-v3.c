@@ -255,7 +255,7 @@ void main_read_from_pi_write_to_rtc(){
    time_requested = *localtime(&epoch_time);
    
    year = time_requested.tm_year+1900;
-   month = time_requested.tm_mday+1;
+   month = time_requested.tm_mon+1;
    day = time_requested.tm_mday;
    hour = time_requested.tm_hour;
    minute = time_requested.tm_min;
@@ -263,7 +263,7 @@ void main_read_from_pi_write_to_rtc(){
 
    /* Got valid input - now write it to the RTC */
    /* The RTC expects the values to be written in packed BCD format */
-   write_rtc(SEC_WRITE, ( (second/10) << 4) | ( second % 10) );
+   write_rtc(SEC_WRITE, ((second/10) << 4 | (second % 10)) & 0x7F );
    write_rtc(MIN_WRITE, ( (minute/10) << 4) | ( minute % 10) );
    write_rtc(HOUR_WRITE, ( (hour/10) << 4) | ( hour % 10) );
    write_rtc(DATE_WRITE, ( (day/10) << 4) | ( day % 10) );
@@ -350,6 +350,9 @@ int main(int argc, char **argv)
 { 
    /* Set up gpi pointer for direct register access */
    setup_io();
+   write_rtc(0x90, 0x00);
+   printf("Trickle charge value: 0x%02X\n", read_rtc(0x91));
+   printf("Clock halt: 0x%02X\n", read_rtc(SEC_READ));
       
    //na boot citam sa rtc
    main_write_to_pi_read_from_rtc();

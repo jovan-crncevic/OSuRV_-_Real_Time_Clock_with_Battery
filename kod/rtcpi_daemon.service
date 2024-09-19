@@ -1,10 +1,10 @@
 [Unit]
-Description=RTC PI program
+Description=RTC_PI_program
 
 [Service]
 Type=simple
 User=root
-ExecStart=/home/stefziv/Desktop/OSURV/Test/moj_program //lokacija a.out
+ExecStart=/home/pi/Documents/OSuRV_dodatni_projekat/OSuRV_-_Real_Time_Clock_with_Battery/kod/a.out
 Restart=always
 RestartSec=3600
 KillMode=process
